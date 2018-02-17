@@ -12,3 +12,8 @@ def save_to_file(header, row_generator, filename, overwrite=False):
 
         writer.writerow(header)
         writer.writerows(row_generator)
+
+
+def serialize_sparse_vector(array):
+    indices = ",".join(str(idx) + ":" + "{:.8f}".format(val) for idx, val in enumerate(array) if val != 0)
+    return str(len(array)) + "," + indices
