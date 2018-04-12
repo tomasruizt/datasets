@@ -49,7 +49,7 @@ class Writer:
 
         with open(filename + ".json", "w") as file:
             data = {"data": list(json_iterable)}
-            json.dump(data, file, indent=4)
+            json.dump(data, file, indent=2)
 
     @staticmethod
     def serialize_sparse_vector(array):
